@@ -8,7 +8,7 @@ def OpçõesMediana():
     elif Opção ==('2'):
         Mediana()
     else:
-        print('opção invalida')
+        print('Opção invalida')
         Menu()
         
 def OpçõesVariação():
@@ -21,7 +21,7 @@ def OpçõesVariação():
     elif Opção ==('2'):
         Variação()
     else:
-        print('opção invalida')
+        print('Opção invalida')
         Menu()
         
 def OpçõesAmplitude():
@@ -34,7 +34,7 @@ def OpçõesAmplitude():
     elif Opção ==('2'):
         Amplitude()
     else:
-        print('opção invalida')
+        print('Opção invalida')
         Menu()
 
 def OpçõesMediaAritimetica():
@@ -47,7 +47,7 @@ def OpçõesMediaAritimetica():
     elif Opção ==('2'):
         MediaAritimetica()
     else:
-        print('opção invalida')
+        print('Opção invalida')
         Menu()
 def OpçõesMediaPonderada():
     print('''
@@ -59,7 +59,7 @@ def OpçõesMediaPonderada():
     elif Opção ==('2'):
         MediaPonderada()
     else:
-        print('opção invalida')
+        print('Opção invalida')
         Menu()
         
 def MediaAritimetica():
@@ -83,7 +83,7 @@ def MediaAritimetica():
                 print('Media = ',Media)
                 OpçõesMediaAritimetica()
         except ValueError:
-            print('Apenas numeros')
+            print('Entrada invalida')
             OpçõesMediaAritimetica()
 
 
@@ -91,7 +91,7 @@ def MediaPonderada():
     print('Media Ponderada')
     while True:
         try:  
-            Quantidade = int(input('Quantidade? '))
+            Quantidade = int(input('Quantidade de alunos? '))
             for i in range(Quantidade):
                 if Quantidade <= 0:
                     print('opção invalida')
@@ -119,7 +119,7 @@ def MediaPonderada():
                             print (media)
                             OpçõesMediaPonderada()
         except ValueError:
-            print('Apenas numeros')
+            print('Entrada invalida')
             OpçõesMediaPonderada()
             
 def Amplitude():
@@ -128,21 +128,25 @@ def Amplitude():
     while True:
         try:
             elementos = int(input('elementos: '))
-            for i in range(elementos):
-                numeros = (input('numero: '))
-                lista.append(numeros)
-                lista.sort(key=int) 
-            print(lista)
-            minimo = int(lista[0])
-            lista.reverse()
-            maximo = int(lista[0])
-            amplitude = (maximo-minimo)
-            print('Valor máximo:', maximo)
-            print('Valor mínimo:', minimo)
-            print('Amplitude Total:', amplitude)
-            OpçõesAmplitude()
+            if elementos >= 11:
+                print('Maximo 10')
+                OpçõesAmplitude()
+            else:
+                for i in range(elementos):
+                    numeros = (input('numero: '))
+                    lista.append(numeros)
+                    lista.sort(key=int) 
+                print(lista)
+                minimo = int(lista[0])
+                lista.reverse()
+                maximo = int(lista[0])
+                amplitude = (maximo-minimo)
+                print('Valor máximo:', maximo)
+                print('Valor mínimo:', minimo)
+                print('Amplitude Total:', amplitude)
+                OpçõesAmplitude()
         except ValueError:
-            print('Apenas numeros')
+            print('Entrada invalida')
 
 def Mediana():
     print('Mediana')
@@ -184,7 +188,7 @@ def Menu():
         elif Opção == ('6'):
             Menu()
         else:
-            print('opção invalida')
+            print('Opção invalida')
             Menu()  
     elif Opção == ('2'):
         print('A Wyden Educacional faz parte do grupo Adtalem Global Education, com 85 anos de tradição, e que tem o objetivo de empoderar estudantes para que alcancem seus objetivos, encontrem o sucesso e façam contribuições inspiradoras para a comunidade global. Desde 2009, a Wyden Educacional vem construindo uma trajetória com foco no sucesso dos seus alunos e acredita na transformação do país por meio da promoção de uma educação com excelência acadêmica, programas para desenvolvimento dos estudantes, infraestrutura e benefícios internacionais. Ao todo, no Brasil, são mais de 52 mil alunos, em 12 instituições.')
@@ -194,7 +198,7 @@ def Menu():
         if Opção == ('1'):
             Menu()   
         else:
-            print('opção invalida')
+            print('Opção invalida')
             Menu()
     elif Opção == ('3'):
         print('''Dev's:
@@ -204,13 +208,13 @@ def Menu():
         if Opção == ('1'):
             Menu()            
         else:
-            print('opção invalida')
+            print('Opção invalida')
             Menu()
     elif Opção == ('4'):
         print('Off')
         
     else:
-            print('opção invalida')
+            print('Opção invalida')
             Menu()   
                 
 Menu()
